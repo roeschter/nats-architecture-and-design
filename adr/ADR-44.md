@@ -66,6 +66,10 @@ such assets.
 
 When the server starts and determines it cannot start an asset for any reason it should set this mode and fields.
 
+For starting incompatible streams in offline mode we would need to load the config in the current manner to figure out
+which subjects Streams would listen on since even while Streams are offline we do need the protections of
+overlapping subjects to be active to avoid issues later when the Stream can come online again.
+
 # Safe unmarshalling of JSON data
 
 The JetStream API and Meta-layer should start using the `DisallowUnknownFields` feature in the go json package and 
